@@ -12,7 +12,7 @@ import static io.restassured.RestAssured.given;
 public class GetRequest02 extends HerOkuAppTestBaseUrl {
 
 
- /*
+ /***
     https://restful-booker.herokuapp.com/booking/5 url'ine
     accept type'i "application/json" olan GET request'i yolladigimda
     gelen response'un
@@ -56,7 +56,7 @@ public class GetRequest02 extends HerOkuAppTestBaseUrl {
           //!!!!!!!!JsonPath ile sadece body dogrulama olur!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
 
-         /*status kodunun 200
+         /**status kodunun 200
          ve content type'inin "application/json"
 
          "firstname": "Mary",

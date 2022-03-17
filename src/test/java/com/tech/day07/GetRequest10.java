@@ -1,4 +1,4 @@
-package com.tech.day06.day07;
+package com.tech.day07;
 
 import baseUrl.DummyBaseUrl;
 import io.restassured.http.ContentType;

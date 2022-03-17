@@ -57,6 +57,101 @@ public class DummyTestData {
    }
 
 
+    /**
+     http://dummy.restapiexample.com./api/v1/employees
+     Status kodun 200 oldugunu,
+     en yüksek maasin 725000 oldugunu,
+     En kucuk yasin 19 oldugunu,
+     ikinci en yüksek maasin 675000 oldugunu test edin
+
+     */
+
+
+     public HashMap<String,Integer>  setUpData02(){
+
+
+         HashMap<String,Integer> expectedData=new HashMap<String,Integer>();
+
+         expectedData.put("statusCode",200);
+         expectedData.put("enYuksekMaas",725000);
+         expectedData.put("enKucukYas",19);
+         expectedData.put("ikinciYuksekMaas",675000);
+
+      return expectedData;
+
+
+     }
+
+  /** http://dummy.restapiexample.com/api/v1/create url ine, Request Body olarak
+    {
+        "name":"Ahmet Aksoy",
+            "salary":"1000",
+            "age":"18",
+            "profile_image": ""
+    }
+    gönderildiğinde(post yapildiginda), Status kodun 200 olduğunu ve dönen response body nin ,
+    {
+        "status": "success",
+            "data": {
+ “id”:…
+    },
+        "message": "Successfully! Record has been added."
+    }
+    olduğunu test edin*/
+
+
+     public  HashMap<String,Object>  setUpRequestBody(){
+
+
+         HashMap <String,Object>  requestBody=new HashMap<String,Object>();
+         requestBody.put("name","flz");
+         requestBody.put("salary","12000");
+         requestBody.put("age",33);
+
+   return requestBody;
+
+     }
+
+
+
+     //biz pnce olusturmak istedigimiz data yi yukarda olsuturduk post classta gonderdik
+    //sonrada beklenen response expected data yi burda yazacagiz,postman da biz bunu uyguladik
+     /**{
+         "status": "success",
+             "data": {
+         "name": "filiz",
+                 "salary": "1200",
+                 "age": 33,
+                 "id": 7340
+     },
+         "message": "Successfully! Record has been added."
+     }
+      buna benzer bir sonuc  donmesi gerekirdi request gonderdigimde
+      */
+
+
+   public HashMap<String,Object>  setUpExpectedData(){
+
+       HashMap<String,Object>  data=new HashMap<String,Object>();
+       data.put("name","filiz");
+       data.put("salary","1200");
+       data.put("age",33);
+
+       HashMap<String,Object>  expectedData=new HashMap<String,Object>();
+       expectedData.put("statusCode",200);
+       expectedData.put("status","success");
+       expectedData.put("data",data);
+       expectedData.put("message","Successfully! Record has been added.");
+
+
+       return expectedData;
+
+
+
+
+   }
+
+
 
 
 

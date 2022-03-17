@@ -1,4 +1,4 @@
-package com.tech.day06.day07;
+package com.tech.day07;
 
 import baseUrl.JsonPlaceHolderUrl;
 import io.restassured.http.ContentType;
@@ -16,7 +16,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 
 public class GetRequest11TestData extends JsonPlaceHolderUrl {
 
-   /*
+   /**
    "https://jsonplaceholder.typicode.com/todos/2 url'ine istel gonderildiginde
    dönen response in Status codunun 200,
    dönen body de,
@@ -65,7 +65,7 @@ public class GetRequest11TestData extends JsonPlaceHolderUrl {
 
 
 
-     /* dönen response in Status codunun 200,
+     /** dönen response in Status codunun 200,
               dönen body de,
       "completed":degerinin false
       "title": degerinin "quis ut nam facilis et officia qui"
