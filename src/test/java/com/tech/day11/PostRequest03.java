@@ -82,8 +82,6 @@ public class PostRequest03 extends JsonPlaceHolderUrl {
         Assert.assertEquals(expectedRequest.getString("title"),actualDataMap.get("title"));
         Assert.assertEquals(expectedRequest.getInt("userId"),actualDataMap.get("userId"));
         Assert.assertEquals(expectedRequest.getBoolean("completed"),actualDataMap.get("completed"));
-
-
     }
 
 
