@@ -9,10 +9,12 @@ public class BookingsDatesPojo {
     }
      */
 
-
+  //private data
   private  String checkin;
   private String checkout;
 
+
+  //getter setter
     public String getCheckin() {
         return checkin;
     }
@@ -29,6 +31,7 @@ public class BookingsDatesPojo {
         this.checkout = checkout;
     }
 
+    //3.adim Constucter,parametre ve parametresiz
 
     public BookingsDatesPojo(String checkin, String checkout) {
         this.checkin = checkin;
@@ -38,7 +41,7 @@ public class BookingsDatesPojo {
     public BookingsDatesPojo() {
     }
 
-
+    //4.adim toString kaliba dokmek icin
     @Override
     public String toString() {
         return "BookingsDatesPojo{" +
