@@ -38,6 +38,8 @@ Status kodun 200 ve dönen response ‘un
  "bookingdates": {
  "checkin": "2020-09-09",
  "checkout": "2020-09-21"
+  }}
+  }
   */
 
 

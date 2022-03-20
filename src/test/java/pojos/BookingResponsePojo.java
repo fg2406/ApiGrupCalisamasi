@@ -4,19 +4,20 @@ public class BookingResponsePojo {
 
 
    /**
-   {
- "bookingid": 11,
- "booking": {
- "firstname": "Selim",
- "lastname": "Ak",
- "totalprice": 15000,
- "depositpaid": true,
- "bookingdates": {
- "checkin": "2020-09-09",
- "checkout": "2020-09-21
-    }
-    }
-    */
+    * {
+    *  "bookingid": 11,
+    *  "booking": {
+    *  "firstname": "Selim",
+    *  "lastname": "Ak",
+    *  "totalprice": 15000,
+    *  "depositpaid": true,
+    *  "bookingdates": {
+    *  "checkin": "2020-09-09",
+    *  "checkout": "2020-09-21"
+    *   }}
+    *   }
+    *   */
+
 
 
    private int bookingid;
