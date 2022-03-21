@@ -33,8 +33,9 @@ public class PostRequestWithPojo01 extends JsonPlaceHolderUrl {
 
     @Test
     public  void  test(){
-      spec01.pathParam("parametre1","todos");
-
+      spec01.pathParam("parametre1","todos");//.queryParam("token",token);
+        // Query params la gonderin derlerse buraya yazariz,key vaule yazinca gelen token yazabilirz
+        //api key de iki gonderme sekli var biri Query params ve asagida header icinde
 
       //expected aldik,gitti toString ile yapti
       TodosPojo requestExpected=new TodosPojo(21,201,"Tidy your room",false);
@@ -43,7 +44,7 @@ public class PostRequestWithPojo01 extends JsonPlaceHolderUrl {
     //repuest gonderme
 
         Response response=given().
-                contentType(ContentType.JSON).
+                contentType(ContentType.JSON).     //eger token kullanirsak basic gerek yok,header.dyeip icine yazariz
                 spec(spec01).auth().basic("admin","password123").
                 body(requestExpected).when().post("/{parametre1}");
         response.prettyPrint();

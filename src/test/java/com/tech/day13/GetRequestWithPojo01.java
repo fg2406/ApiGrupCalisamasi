@@ -1,8 +1,10 @@
 package com.tech.day13;
 
 import baseUrl.DummyBaseUrl;
+import com.google.gson.Gson;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.junit.Assert;
 import org.junit.Test;
 import pojos.Data;
 import pojos.DummyPojo;
@@ -47,10 +49,29 @@ public class GetRequestWithPojo01 extends DummyBaseUrl {
                  when().
                  get("/{parametre1}/{parametre2}");
 
-     response.prettyPrint();
+   //  response.prettyPrint();
+
+    DummyPojo actualData=response.as(DummyPojo.class);
+    System.out.println("actualData"+actualData);
+
+    Assert.assertEquals(200,response.getStatusCode());
+    Assert.assertEquals(expectedData.getStatus(),actualData.getStatus());//yukardaki data icindeki status bu
+    Assert.assertEquals(expectedData.getData().getEmployee_age(),actualData.getData().getEmployee_age());
+    Assert.assertEquals(expectedData.getData().getEmployee_name(),actualData.getData().getEmployee_name());
+    Assert.assertEquals(expectedData.getData().getEmployee_salary(),actualData.getData().getEmployee_salary());
+    Assert.assertEquals(expectedData.getData().getProfile_image(),actualData.getData().getProfile_image());
+    Assert.assertEquals(expectedData.getMessage(),actualData.getMessage());//data icinden ciktik,getData yok burda
 
 
-        
+      // De-Serialization --> json formattan java ya cevirir (HasMap ile yaptik)
+    //Serialization --> java yapisinda olan datalari json formatina
+    //Gson sinifindan bir obje uretilerek yapilir
+
+      Gson gson=new Gson();
+      String jsonFormJava=gson.toJson(actualData);
+      System.out.println("jsonFormJava"+jsonFormJava);
+
+
 
 
 
